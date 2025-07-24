@@ -96,6 +96,7 @@ export const getCompData = async (query: string) => {
     return data;
   } catch (error: any) {
     console.log("error message: ", error.message);
+    return error;
   }
 };
 
@@ -107,6 +108,7 @@ export const getTenK = async (query: string) => {
     return data;
   } catch (error: any) {
     console.log("error message: ", error.message);
+    return error;
   }
 };
 

@@ -337,4 +337,5 @@ export interface CompanyTenK {
   type: string;
   link: string;
   finalLink: string;
+  id: number;
 }

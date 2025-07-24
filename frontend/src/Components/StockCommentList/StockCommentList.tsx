@@ -11,7 +11,7 @@ const StockCommentList = ({ comments }: Props) => {
     <>
       {comments
         ? comments.map((comment) => {
-            return <StockCommentListItem comment={comment} />;
+            return <StockCommentListItem comment={comment} key={comment.id}/>;
           })
         : ""}
     </>

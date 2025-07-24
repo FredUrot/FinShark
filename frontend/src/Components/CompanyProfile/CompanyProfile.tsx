@@ -9,6 +9,7 @@ import {
   formatRatio,
 } from "../../Helpers/NumberFormatting";
 import StockComment from "../StockComment/StockComment";
+import { handleError } from "../../Helpers/ErrorHandler";
 
 type Props = {};
 
@@ -86,8 +87,12 @@ const CompanyProfile = (props: Props) => {
   const [companyData, setCompanyData] = useState<CompanyKeyMetrics>();
   useEffect(() => {
     const getCompanyKeyRatios = async () => {
+      try {
       const value = await getKeyMetrics(ticker);
       setCompanyData(value?.data[0]);
+      } catch (error) {
+        handleError(error)
+      }
     };
     getCompanyKeyRatios();
   }, []);
